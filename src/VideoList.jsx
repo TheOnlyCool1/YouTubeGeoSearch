@@ -1,0 +1,1 @@
+// Scroll area which will contain the list of videos after the search.
