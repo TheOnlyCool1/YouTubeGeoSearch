@@ -9,9 +9,9 @@ export default async function searchVideos(q, videoLocation, radius, order) {
                 q: q,
                 key: API_KEY,
                 type: 'video',
-                maxResults: 1,
-                location: "37.795163718678964, -122.41781593138869",
-                radius: radius,
+                maxResults: 50,
+                location: videoLocation,
+                locationRadius: radius,
                 order: order
             }
         });
