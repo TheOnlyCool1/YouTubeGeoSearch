@@ -23,14 +23,14 @@
   font-size: 16px;
   padding: 10px;
   margin: 0;
-  background-color: #f8f9fa; /* Light gray background for the heading */
+  background-color: #3f3f3f; /* Light gray background for the heading */
   border-bottom: 1px solid #ddd;
 }
 
 .mapEmbed {
   grid-column: 1 / 2;
   height: 400px;
-  background-color: #e0e0e0; /* Placeholder for the actual map */
+  width: 484px;
 }
 
 .parameters,
