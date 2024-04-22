@@ -6,6 +6,6 @@ import ApiTest from './DavidTesting/ApiTest.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <ApiTest />
+    <App />
   </React.StrictMode>,
 )
