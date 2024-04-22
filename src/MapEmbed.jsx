@@ -1,15 +1,12 @@
 // This will have the Google Maps Embed from which the user will get the latitude/longitude coordinates from
 import { useState } from 'react';
-import { APIProvider, Map, Marker } from '@vis.gl/react-google-maps';
+import { APIProvider, InfoWindow, Map } from '@vis.gl/react-google-maps';
 
 const MapEmbed = () => {
   const [clickedPosition, setClickedPosition] = useState(null); //lat and long vals are stored in clickedPosition
 
   const handleMapClick = (event) => {
-    const { latLng } = event;
-    const latitude = latLng.lat();
-    const longitude = latLng.lng();
-    setClickedPosition({ latitude, longitude });
+    setClickedPosition(event.detail.latLng);
   };
 
   return (
@@ -22,9 +19,11 @@ const MapEmbed = () => {
             defaultZoom={10} 
             onClick={handleMapClick} 
           >
-            {/* {clickedPosition && (
-              <Marker position={clickedPosition} />  //incase we wanted to mark where user clicks, doesnt work tho :(
-            )} */}
+            {clickedPosition && 
+              <InfoWindow position={clickedPosition}>
+              lat: {clickedPosition.lat}, lng: {clickedPosition.lng}
+              </InfoWindow>
+            }
           </Map>
         </APIProvider>
       </div>
