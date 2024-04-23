@@ -7,14 +7,18 @@
 import React from 'react';
 
 
+// https://developers.google.com/youtube/v3/docs/videos
+
 function VideoDisplay({ video }) {
+    let videoLink = "https://www.youtube.com/watch?v=" + video.id;
+    let snippet = video.snippet;
     return (
       <div className="videoDisplay">
-        <img src={video.thumbnail} alt={video.title} />
-        <h3>{video.title}</h3>
-        <p>{video.views} Views</p>
-        <p>{video.description}</p>
-        <p>Channel: {video.channelName}</p>
+        <img src={snippet.thumbnails.default.url} alt={snippet.localized.title} href={videoLink} />
+        <h3 href={videoLink}>{snippet.localized.title}</h3>
+        <p>{video.statistics.viewCount} Views</p>
+        <p>{snippet.localized.description}</p>
+        <p>Channel: {snippet.channelTitle}</p>
       </div>
     );
   }
