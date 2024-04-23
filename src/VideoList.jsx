@@ -1,7 +1,5 @@
 // Scroll area which will contain the list of videos after the search.
 
-// Scroll area which will contain the list of videos after the search.
-
 import React from 'react';
 import VideoDisplay from './VideoDisplay';
 
