@@ -10,23 +10,32 @@ const API_KEY = 'AIzaSyAJfS5TdamOO7CSVWzqAJw5xUUT2neRGQg';
 function ApiTest() {
   const [clickedPosition, setClickedPosition] = useState(null);
   const [videos, setVideos] = useState([]);
+  
   const handleMapClick = (position) => {
     setClickedPosition(position);
   };
   const onRequestSearch = () => {
     const query = document.getElementById('queryInput').value;
-    const radius = document.getElementById('radiusInput').value + "km";
+    const radius = document.getElementById('radiusInput').value;
     const sortBy = document.getElementById('sortInput').value;
-    searchVideos(query, `${clickedPosition.lat}, ${clickedPosition.lng}`, `${radius}`, sortBy)
-           .then(data => {
-              const videoItems = data.items.map(item => ({
-                  id: item.id.videoId,
-                  title: item.snippet.title,
-                  thumbnail: item.snippet.thumbnails.default.url
-              }));
-              setVideos(videoItems);
-          })
-          .catch(error => console.error(error));
+    if (!clickedPosition) {
+      alert("Please select a place on the map!")
+      return false;
+    }
+    if (radius == "") {
+      alert("Radius must be nonzero!")
+      return false;
+    }
+    searchVideos(query, `${clickedPosition.lat}, ${clickedPosition.lng}`, `${radius}km`, sortBy)
+      .then(data => {
+        const videoItems = data.items.map(item => ({
+            id: item.id.videoId,
+            title: item.snippet.title,
+            thumbnail: item.snippet.thumbnails.default.url
+        }));
+        setVideos(videoItems);
+    })
+    .catch(error => console.error(error));
   };
   return (
     <div className="App">

@@ -15,7 +15,7 @@ function Parameters() {
           <option value="date">Date</option>
           <option value="viewCount">Views</option>
           <option value="title">Title</option>
-          <option value="videoCount ">Video Count</option>
+          <option value="videoCount">Video Count</option>
         </select>
       </div>
     );
