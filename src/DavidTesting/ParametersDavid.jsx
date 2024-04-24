@@ -8,7 +8,7 @@ function Parameters() {
     return (
       <div className="parameters">
         <input id="queryInput" type="text" placeholder="Search Keywords" />
-        <input id="radiusInput" type="number" placeholder="Search radius (km)" title="Please enter a valid number followed by 'km' (optional)" />
+        <input id="radiusInput" type="number" min={1} placeholder="Search radius (km)" title="Please enter a valid number followed by 'km' (optional)" />
         <select id="sortInput">
           <option value="relevance">Relevance</option>
           <option value="rating">Rating</option>
