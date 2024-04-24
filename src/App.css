@@ -83,7 +83,9 @@
   flex-direction: column;
   height: 90vh;
   overflow-y: auto;
-  width: 50%;
+  width: 53%;
+  padding-top: 13px;
+  padding-left: 60px;
 }
 
 .videoList ul {
