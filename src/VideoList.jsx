@@ -5,11 +5,11 @@ import VideoDisplay from './VideoDisplay';
 
 
 
-function VideoList() {
+function VideoList({videos}) {
     // Simulating video data
-    const videos = [
-      // Populate with video data objects
-    ];
+    // const videos = [
+    //   // Populate with video data objects
+    // ];
   
     return (
       <div className="videoList">

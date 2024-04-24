@@ -28,10 +28,13 @@ function ApiTest() {
     }
     searchVideos(query, `${clickedPosition.lat}, ${clickedPosition.lng}`, `${radius}km`, sortBy)
       .then(data => {
+        console.log(data);
         const videoItems = data.items.map(item => ({
             id: item.id.videoId,
             title: item.snippet.title,
-            thumbnail: item.snippet.thumbnails.default.url
+            thumbnail: item.snippet.thumbnails.default.url,
+            description: item.snippet.description,
+            channel: item.snippet.channelTitle
         }));
         setVideos(videoItems);
     })
@@ -43,7 +46,7 @@ function ApiTest() {
       <MapEmbed clickedPosition={clickedPosition} onMapClick={handleMapClick}/>
       <Parameters />
       <SearchButton onRequestSearch={onRequestSearch} />
-      <VideoList />
+      <VideoList videos={videos} />
       <pre>{JSON.stringify(videos, null, 2)}</pre>
     </div>
   );
