@@ -41,13 +41,17 @@ function ApiTest() {
     .catch(error => console.error(error));
   };
   return (
-    <div className="App">
-      <h1>YouTube GeoSearch</h1>
-      <MapEmbed clickedPosition={clickedPosition} onMapClick={handleMapClick}/>
-      <Parameters />
-      <SearchButton onRequestSearch={onRequestSearch} />
-      <VideoList videos={videos} />
-      <pre>{JSON.stringify(videos, null, 2)}</pre>
+    <div className="App" style={{display: 'flex', flexDirection: 'row'}}>
+      <div>
+        <h1>YouTube GeoSearch</h1>
+        <MapEmbed clickedPosition={clickedPosition} onMapClick={handleMapClick}/>
+        <Parameters />
+        <SearchButton onRequestSearch={onRequestSearch} />
+      </div>
+      {/* <pre>{JSON.stringify(videos, null, 2)}</pre> */}
+      <div>
+        <VideoList videos={videos} />
+      </div>
     </div>
   );
 }
