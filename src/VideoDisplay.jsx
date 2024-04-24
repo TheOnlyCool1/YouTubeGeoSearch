@@ -14,8 +14,12 @@ function VideoDisplay({ video }) {
     let videoLink = "https://www.youtube.com/watch?v=" + video.id;
     return (
       <div className="videoDisplay">
-        <img src={video.thumbnail} alt={video.title} href={videoLink} />
-        <h3 href={videoLink}>{video.title}</h3>
+        <a href={videoLink} target="_blank" rel="noopener noreferrer">
+          <img src={video.thumbnail} alt={video.title} href={videoLink} />
+        </a>
+        <a href={videoLink} target="_blank" rel="noopener noreferrer">
+          <h3>{video.title}</h3>
+        </a>
         {/* <p>{video.viewCount} Views</p> */}
         <p>{video.description}</p>
         <p>Channel: {video.channel}</p>
