@@ -81,10 +81,19 @@
   grid-column: 2 / 3;
   display: flex;
   flex-direction: column;
+  height: 90vh;
+  overflow-y: auto;
+  width: 50%;
+}
+
+.videoList ul {
+  list-style-type: none;
+  padding-left: 0px;
+  overflow-y: auto;
 }
 
 .videoDisplay {
-  display: grid;
+  display: flex;
   grid-template-columns: auto 1fr;
   gap: 10px;
   border: 1px solid #ddd;
@@ -92,6 +101,15 @@
   padding: 10px;
   margin-bottom: 10px;
   background-color: #fff;
+}
+
+.videoDisplay a {
+  text-wrap: balance;
+  width: auto;
+}
+
+.videoDisplayText {
+  width: 70%
 }
 
 .videoDisplay img {

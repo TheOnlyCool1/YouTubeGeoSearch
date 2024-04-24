@@ -13,9 +13,13 @@ function VideoList({videos}) {
   
     return (
       <div className="videoList">
-        {videos.map(video => (
-          <VideoDisplay key={video.id} video={video} />
-        ))}
+        <ul>
+          {videos.map(video => (
+            <li>
+              <VideoDisplay key={video.id} video={video} />
+            </li>
+          ))}
+        </ul>
       </div>
     );
   }

@@ -17,12 +17,14 @@ function VideoDisplay({ video }) {
         <a href={videoLink} target="_blank" rel="noopener noreferrer">
           <img src={video.thumbnail} alt={video.title} href={videoLink} />
         </a>
-        <a href={videoLink} target="_blank" rel="noopener noreferrer">
-          <h3>{video.title}</h3>
-        </a>
-        {/* <p>{video.viewCount} Views</p> */}
-        <p>{video.description}</p>
-        <p>Channel: {video.channel}</p>
+        <div className="videoDisplayText">
+          <a href={videoLink} target="_blank" rel="noopener noreferrer">
+            <h3>{video.title}</h3>
+          </a>
+          {/* <p>{video.viewCount} Views</p> */}
+          <p>{video.description}</p>
+          <p>Channel: {video.channel}</p>
+        </div>
       </div>
     );
   }
