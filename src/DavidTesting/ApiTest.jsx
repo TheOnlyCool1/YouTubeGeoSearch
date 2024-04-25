@@ -22,7 +22,7 @@ function ApiTest() {
       alert("Please select a place on the map!")
       return false;
     }
-    if (radius == "") {
+    if (radius == "" || radius <= 0) {
       alert("Radius must be nonzero!")
       return false;
     }
